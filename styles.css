@@ -1,0 +1,117 @@
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Black-and-white theme for body and layout */
+body {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Container setup with animation */
+.container {
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Title hover effect */
+#plistTitle {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+#plistTitle:hover {
+  color: #808080;
+  transform: scale(1.1);
+}
+
+/* Viewer box with smooth animation */
+#plistViewer {
+  margin-top: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.5s ease;
+}
+#plistViewer.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* File upload button styling */
+#uploadBtn {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background-color: #111;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+#uploadBtn:hover {
+  border-color: #808080;
+}
+
+/* Textarea for plist content */
+textarea {
+  width: 100%;
+  height: 200px;
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  resize: none;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+textarea:hover {
+  border-color: #808080;
+}
+
+/* Search input and button styles */
+.search-container {
+  display: flex;
+  gap: 10px;
+}
+#searchInput {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background-color: #111;
+  color: #fff;
+  outline: none;
+}
+#searchInput:focus {
+  border-color: #808080;
+}
+
+#searchBtn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+#searchBtn:hover {
+  background-color: #808080;
+  transform: scale(1.05);
+}
