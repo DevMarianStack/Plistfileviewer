@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plist File Viewer</title>
+  <title>Plist Editor</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1 id="plistTitle">plist file</h1>
-    <div id="plistViewer" class="hidden">
-      <input type="file" id="uploadBtn" accept=".plist" />
-      <textarea id="plistContent" placeholder="Plist content will appear here..." readonly></textarea>
-      <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search...">
-        <button id="searchBtn">Find</button>
+    <h1 class="title">Plist File Editor</h1>
+    
+    <div class="editor-box">
+      <input type="file" id="uploadBtn" accept=".plist" class="upload-btn" />
+      <textarea id="plistContent" class="plist-content" placeholder="Upload and edit your plist content here..."></textarea>
+
+      <div class="action-bar">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+        <button id="searchBtn" class="btn">Find</button>
+        <button id="saveBtn" class="btn">Save File</button>
       </div>
     </div>
   </div>
