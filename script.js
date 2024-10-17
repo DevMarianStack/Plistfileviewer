@@ -8,7 +8,7 @@ const saveBtn = document.getElementById('saveBtn');
 // Handle file upload
 uploadBtn.addEventListener('change', (event) => {
   const file = event.target.files[0];
-  
+
   if (file) {
     const reader = new FileReader();
     reader.onload = (e) => {
@@ -18,13 +18,25 @@ uploadBtn.addEventListener('change', (event) => {
   }
 });
 
-// Search functionality
+// Search functionality with highlighting
 searchBtn.addEventListener('click', () => {
-  const searchTerm = searchInput.value.toLowerCase();
-  const content = plistContent.value.toLowerCase();
+  const searchTerm = searchInput.value;
+  const content = plistContent.value;
+  const index = content.toLowerCase().indexOf(searchTerm.toLowerCase());
 
-  if (content.includes(searchTerm)) {
-    alert(`Found: "${searchTerm}"`);
+  if (index !== -1) {
+    // Highlight the found text
+    plistContent.focus();
+    plistContent.setSelectionRange(index, index + searchTerm.length);
+
+    // Scroll to the found text
+    plistContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Temporarily highlight the text for 1 second
+    plistContent.style.backgroundColor = '#808080';
+    setTimeout(() => {
+      plistContent.style.backgroundColor = '#000';
+    }, 1000);
   } else {
     alert(`"${searchTerm}" not found.`);
   }
